@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+
+        .header {
+            background:white;                  ;
+            color: #ff69b4;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+
+    
+        .msg-box {
+            width: 90%;
+            margin: 25px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ccc;
+            display: flex;
+            gap: 12px;
+            cursor: pointer;
+            margin-top: 40px;
+
+        }
+
+        .msg-profile {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        
+        }
+
+        .msg-content {
+            width: 100%;
+        }
+
+        .msg-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff69b4;
+            margin-left: 10px;
+        }
+
+        .msg-text {
+            font-size: 14px;
+            color: grey;
+            margin-top: 3px;
+            margin-left: 10px;
+        }
+
+        .msg-time {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+    
+        .bottom-bar {
+            width: 100%;
+            background: black;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bottom-icon img {
+            width: 35px;
+            filter: invert(1);
+        }
+
+        .msg-box:hover{
+            cursor: pointer;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+   background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      transform: translateY(-5px);
+
+        }
+        img{
+            border-radius: 80%;
+            border: #ff69b4 solid 2px;
+            
+        }
+        input{
+            padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      width: 200px;
+      font-size: 0.9rem;
+      outline: none;
+      margin-left: 1130px;
+        }
+         .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 65px;
+  z-index: 10;
+  border-top: 1px solid #eee;
+}
+
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #888;             
+  font-size: 1.6rem;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 1 !important;     
+}
+
+
+.bottom-nav a:hover {
+  color: #ff69b4;
+  background-color: #ffe4ec;
+  transform: translateY(-4px);
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+}
+
+
+.bottom-nav a.active {
+  color: #ff69b4;
+  background-color: #ffe4ec;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+  transform: translateY(-4px);
+}
+
+    @media (max-width: 768px) {
+      header input {
+        width: 140px;
+      }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="header">Messages
+        <input type="text" placeholder="Search...">
+    </div>
+
+    
+    <div class="msg-box">
+        <div class="msg-profile"> 
+            <img src="women logo.png" height="50px" width="50px">
+        </div>
+        <div class="msg-content">
+            <div class="msg-name">Client 1</div>
+            <div class="msg-text">Hello! I want to discuss a new design...</div>
+            <div class="msg-time">10 min ago</div>
+        </div>
+    </div>
+
+
+    <div class="msg-box">
+        <div class="msg-profile">
+            <img src="women logo.png" height="50px" width="50px">
+        </div>
+        <div class="msg-content">
+            <div class="msg-name">Client 2</div>
+            <div class="msg-text">Can you send details of my order?</div>
+            <div class="msg-time">30 min ago</div>
+        </div>
+    </div>
+
+    
+    <div class="msg-box">
+        <div class="msg-profile">
+            <img src="women logo.png" height="50px" width="50px">
+        </div>
+        <div class="msg-content">
+            <div class="msg-name">Client 3</div>
+            <div class="msg-text">Payment has been done. Please check...</div>
+            <div class="msg-time">1 hour ago</div>
+        </div>
+    </div>
+
+    
+    <div class="msg-box">
+        <div class="msg-profile">
+            <img src="women logo.png" height="50px" width="50px">
+        </div>
+        <div class="msg-content">
+            <div class="msg-name">Client 4</div>
+            <div class="msg-text">Share the design samples...</div>
+            <div class="msg-time">Yesterday</div>
+        </div>
+    </div>
+    <div class="bottom-nav">
+    <a href="designer.html"><i class="fas fa-home"></i></a>
+    <a href="myorder.html"><i class="fas fa-box"></i></a>
+    <a href="mymessage.html" class="active"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fas fa-bell"></i></a>
+    <a href="#"><i class="fas fa-user-circle"></i></a>
+  </div>
+
+    
+</body>
+</html>

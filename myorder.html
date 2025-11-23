@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | FashionLink</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 0.8rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      color: #ff69b4;
+      font-weight: 600;
+    }
+
+    main {
+      margin-top: 70px;
+      margin-bottom: 80px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .order-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.3s ease, background-color 0.3s;
+      position: relative;
+    }
+
+    .order-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-info img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ff69b4;
+    }
+
+    .order-details {
+      flex: 1;
+      margin-left: 1.5rem;
+    }
+
+    .order-details h4 {
+      color: #ff69b4;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .order-details p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .order-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .accept {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .accept:hover {
+      background-color: #ff4fa2;
+      transform: scale(1.05);
+    }
+
+    .reject {
+      background-color: #eee;
+      color: #444;
+    }
+
+    .reject:hover {
+      background-color: #ffefef;
+      transform: scale(1.05);
+    }
+
+    
+    .status {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      display: none;
+    }
+
+    .accepted {
+      background-color: #d4f8d4;
+      color: #2e8b57;
+    }
+
+    .rejected {
+      background-color: #ffe4e4;
+      color: #c0392b;
+    }
+
+    
+    
+
+     .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 65px;
+  z-index: 10;
+  border-top: 1px solid #eee;
+}
+
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #888;            
+  font-size: 1.6rem;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 1 !important;     
+}
+
+
+.bottom-nav a:hover {
+  color: #ff69b4;
+  background-color: #ffe4ec;
+  transform: translateY(-4px);
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+}
+
+
+.bottom-nav a.active {
+  color: #ff69b4;
+  background-color: #ffe4ec;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+  transform: translateY(-4px);
+}
+
+ @media (max-width: 768px) {
+      header input {
+        width: 140px;
+      }
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <h1>My Orders</h1>
+  </header>
+
+  <main>
+    <div class="order-card">
+      <div class="client-info">
+        <img src="women logo.png" alt="Client 1">
+        <div>
+          <h3>priya Sharma</h3>
+          <p>Order ID: #1023</p>
+        </div>
+      </div>
+      <div class="order-details">
+        <h4>Evening Gown</h4>
+        <p>Elegant pink silk gown with pearl embroidery, delivery in 15 days.</p>
+      </div>
+      <img src="princess gown.avif" class="order-img" alt="Dress 1">
+      <div class="actions">
+        <button class="btn accept">Accept</button>
+        <button class="btn reject">Reject</button>
+      </div>
+      <span class="status"></span>
+    </div>
+
+    <div class="order-card">
+      <div class="client-info">
+        <img src="women logo.png" alt="Client 2">
+        <div>
+          <h3>Neha </h3>
+          <p>Order ID: #1024</p>
+        </div>
+      </div>
+      <div class="order-details">
+        <h4>Wedding Lehenga</h4>
+        <p>Custom maroon velvet lehenga with gold zari work and matching dupatta.</p>
+      </div>
+      <img src="bridal lahenga.jpg" class="order-img" alt="Dress 2">
+      <div class="actions">
+        <button class="btn accept">Accept</button>
+        <button class="btn reject">Reject</button>
+      </div>
+      <span class="status"></span>
+    </div>
+
+    <div class="order-card">
+      <div class="client-info">
+        <img src="women logo.png" alt="Client 3">
+        <div>
+          <h3>Sana Ali</h3>
+          <p>Order ID: #1025</p>
+        </div>
+      </div>
+      <div class="order-details">
+        <h4>Casual Dress</h4>
+        <p>winter style streetwear , M size top and bottom...</p>
+      </div>
+      <img src="modern-street-wear-fashion.jpg" class="order-img" alt="Dress 3">
+      <div class="actions">
+        <button class="btn accept">Accept</button>
+        <button class="btn reject">Reject</button>
+      </div>
+      <span class="status"></span>
+    </div>
+
+    <div class="order-card">
+      <div class="client-info">
+        <img src="women logo.png" alt="Client 1">
+        <div>
+          <h3>Arena Ilish</h3>
+          <p>Order ID: #5023</p>
+        </div>
+      </div>
+      <div class="order-details">
+        <h4>Red velevet Gown</h4>
+        <p>Elegant princess red velevet gown white pearls shinny crystals embroidery, delivery in 20 days.</p>
+      </div>
+      <img src="bridal gown.jpg" class="order-img" alt="Dress 1">
+      <div class="actions">
+        <button class="btn accept">Accept</button>
+        <button class="btn reject">Reject</button>
+      </div>
+      <span class="status"></span>
+    </div>
+
+   <div class="order-card">
+      <div class="client-info">
+        <img src="women logo.png" alt="Client 1">
+        <div>
+          <h3>Zara stanvic</h3>
+          <p>Order ID: #1023</p>
+        </div>
+      </div>
+      <div class="order-details">
+        <h4>Bridal wedding Gown</h4>
+        <p>creamy royal wedding bridal dress with shinny rhinestones,delivery in 30 days.</p>
+      </div>
+      <img src="evening gown.webp" class="order-img" alt="Dress 1">
+      <div class="actions">
+        <button class="btn accept">Accept</button>
+        <button class="btn reject">Reject</button>
+      </div>
+      <span class="status"></span>
+    </div>
+
+<div class="bottom-nav">
+    <a href="designer.html"><i class="fas fa-home"></i></a>
+    <a href="myorder.html" class="active"><i class="fas fa-box"></i></a>
+    <a href="mymessage.html"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fas fa-bell"></i></a>
+    <a href="#"><i class="fas fa-user-circle"></i></a>
+  </div>
+
+
+
+  </main>
+
+  <script>
+  
+    const orderCards = document.querySelectorAll(".order-card");
+
+    orderCards.forEach(card => {
+      const acceptBtn = card.querySelector(".accept");
+      const rejectBtn = card.querySelector(".reject");
+      const status = card.querySelector(".status");
+
+      acceptBtn.addEventListener("click", () => {
+        card.style.backgroundColor = "#f0fff0";
+        status.textContent = "✅ Accepted";
+        status.classList.add("accepted");
+        status.style.display = "inline-block";
+        acceptBtn.disabled = true;
+        rejectBtn.disabled = true;
+        acceptBtn.style.opacity = "0.5";
+        rejectBtn.style.opacity = "0.5";
+      });
+
+      rejectBtn.addEventListener("click", () => {
+        card.style.backgroundColor = "#fff0f0";
+        status.textContent = "❌ Rejected";
+        status.classList.add("rejected");
+        status.style.display = "inline-block";
+        acceptBtn.disabled = true;
+        rejectBtn.disabled = true;
+        acceptBtn.style.opacity = "0.5";
+        rejectBtn.style.opacity = "0.5";
+      });
+    });
+  </script>
+
+</body>
+</html>
+

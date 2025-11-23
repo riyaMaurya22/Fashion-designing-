@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FashionLink</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+  
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-size: 2em;
+      z-index: 10;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    #splash h1 {
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      transition: opacity 0.5s ease;
+    }
+
+    .main h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #222;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .options {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      width: 250px;
+      height: 320px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff69b4;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: #ff69b4;
+    }
+
+    .card p {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    
+    .main {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 2.6s; 
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="splash">
+    <h1>SavarLuu</h1>
+    <p style="font-size: 0.5em;">Connecting Designers & Clients</p>
+  </div>
+
+  
+  <div class="main">
+    <h2>Who are you?</h2>
+    <div class="options">
+    
+       <a href="designer.html">
+      <div class="card" onclick="alert('Designer page coming soon!')">
+    
+        <img src="dress logo.webp" alt="Designer" />
+        </a>
+        <h3>Designer</h3>
+        <p>Showcase your creations, connect with clients, and grow your brand.</p>
+      </div>
+
+    
+      <div class="card" onclick="alert('Client page coming soon!')">
+        <img src="client logo.avif" alt="Client" />
+        <h3>Client</h3>
+        <p>Find the perfect designer and order custom outfits that fit your style.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
